@@ -1,12 +1,14 @@
 const panels = document.querySelectorAll('.panel');
 
-panels.forEach(() => {
-    panels.addEventListener('click', () => {
-        removeActiveClass();
-        ));
-    panels.addEventListener('transitionend', toggleOpen);
-}
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses();
+        panel.classList.add('active')
+    });
+});
 
-function removeActiveClass () {
-    panels.forEach(panel => panel.classList.remove('active'));
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    });
 }
